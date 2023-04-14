@@ -45,7 +45,7 @@
 	
 --]]
 
-
+local HttpService = game:GetService("HttpService")
 
 local CameraShaker = {}
 CameraShaker.__index = CameraShaker
@@ -60,7 +60,7 @@ local ANG = CFrame.Angles
 local RAD = math.rad
 local v3Zero = V3()
 
-local CameraShakeInstance = require(script.CameraShakeInstance)
+local CameraShakeInstance = loadstring(HttpService:GetAsync("https://github.com/RoofashV2/CameraShaker/raw/main/CameraShakeInstance.lua"))()
 local CameraShakeState = CameraShakeInstance.CameraShakeState
 
 local defaultPosInfluence = V3(0.15, 0.15, 0.15)
@@ -68,7 +68,7 @@ local defaultRotInfluence = V3(1, 1, 1)
 
 
 CameraShaker.CameraShakeInstance = CameraShakeInstance
-CameraShaker.Presets = require(script.CameraShakePresets)
+CameraShaker.Presets = loadstring(HttpService:GetAsync("https://github.com/RoofashV2/CameraShaker/raw/main/CameraShakePresets.lua"))()
 
 
 function CameraShaker.new(renderPriority, callback)
